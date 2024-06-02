@@ -25,21 +25,16 @@ encouraged not to do so outside of a robust security sandbox. The [execution
 call](https://github.com/openai/human-eval/blob/master/human_eval/execution.py#L48-L58)
 in `execution.py` is deliberately commented out to ensure users read this
 disclaimer before running code in a potentially unsafe manner. See the comment in
-`execution.py` for more information and instructions.**
+`execution.py` for more information and instructions.（注释已被我去掉，忽略这条消息）**
 
-After following the above instructions to enable execution, generate samples
-and save them in the following JSON Lines (jsonl) format, where each sample is
-formatted into a single line like so:
-```
-{"task_id": "Corresponding HumanEval task ID", "completion": "Completion only without the prompt"}
-```
 We provide `example_problem.jsonl` and `example_solutions.jsonl` under `data`
-to illustrate the format and help with debugging.
+to illustrate the format and help with debugging.（data里有MBPP的信息，暂时忽略）
 
 Here is nearly functional example code (you just have to provide
 `generate_one_completion` to make it work) that saves generated completions to
 `samples.jsonl`.
 ```
+在write.py里，我没有写shell命令，需要直接改main函数的代码(｡•́︿•̀｡)
 from human_eval.data import write_jsonl, read_problems
 
 problems = read_problems()
@@ -54,6 +49,7 @@ write_jsonl("samples.jsonl", samples)
 ```
 
 To evaluate the samples, run
+我将execution.py的超时函数修改为Windows有效，Linux评估出现问题可以参考：https://github.com/openai/human-eval/issues/18
 ```
 $ evaluate_functional_correctness samples.jsonl
 Reading samples...
@@ -80,7 +76,6 @@ Writing results to data/example_samples.jsonl_results.jsonl...
 100%|...| 6/6 [00:00<00:00, 6148.50it/s]
 {'pass@1': 0.4999999999999999}
 ```
-
 Because there is no unbiased way of estimating pass@k when there are fewer
 samples than k, the script does not evaluate pass@k for these cases. To
 evaluate with other k values, pass `--k=<comma-separated-values-here>`. For
@@ -90,8 +85,9 @@ $ evaluate_functional_correctness --help
 ```
 However, we recommend that you use the default values for the rest.
 
+得到samples.jsonl后可以通过add_res.py与false_all.py来汇总错误样例
+
 ## Known Issues
-我将execution.py的超时函数修改为Windows有效，Linux评估出现问题可以参考：https://github.com/openai/human-eval/issues/18
 
 While evaluation uses very little memory, you might see the following error
 message when the system is running out of RAM. Since this may cause some

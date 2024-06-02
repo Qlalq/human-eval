@@ -34,7 +34,7 @@ Here is nearly functional example code (you just have to provide
 `generate_one_completion` to make it work) that saves generated completions to
 `samples.jsonl`.
 ```
-在write.py里，我没有写shell命令，需要直接改main函数的代码(｡•́︿•̀｡)
+#以下代码已在write.py里实现，没有写shell命令，需要直接改main函数的代码(｡•́︿•̀｡)，**注意加API-key**
 from human_eval.data import write_jsonl, read_problems
 
 problems = read_problems()

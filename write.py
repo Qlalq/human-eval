@@ -4,7 +4,7 @@ import openai
 from datetime import datetime
 
 openai.api_base = "https://openkey.cloud/v1" # 换成代理，一定要加v1
-openai.api_key = "sk-J1AjZiqLWeOQ9MEkA293Be557d8a4021B7A55e7e25F3305e"
+openai.api_key = "" #你的API!!!!!!!!!!!!!!!!!!!!!!
 
 #注意：大模型输出会带上def以及函数名，这不影响评测结果
 def generate_one_completion(prompt,task_id):

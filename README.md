@@ -1,4 +1,4 @@
-# HumanEval: Hand-Written Evaluation Set 
+# HumanEval: Hand-Written Evaluation Set （中文是我的补充）
 
 This is an evaluation harness for the HumanEval problem solving dataset
 described in the paper "[Evaluating Large Language Models Trained on

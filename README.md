@@ -49,7 +49,8 @@ write_jsonl("samples.jsonl", samples)
 ```
 
 To evaluate the samples, run
-我将execution.py的超时函数修改为Windows有效，Linux评估出现问题可以参考：https://github.com/openai/human-eval/issues/18
+
+**我将execution.py的超时函数修改为Windows有效，Linux评估出现问题可以参考：https://github.com/openai/human-eval/issues/18**
 ```
 $ evaluate_functional_correctness samples.jsonl
 Reading samples...
@@ -85,7 +86,8 @@ $ evaluate_functional_correctness --help
 ```
 However, we recommend that you use the default values for the rest.
 
-得到samples.jsonl后可以通过add_res.py与false_all.py来汇总错误样例
+## 补充：错误样例汇总
+**得到samples.jsonl后可以通过add_res.py与false_all.py来汇总错误样例**
 
 ## Known Issues
 

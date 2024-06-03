@@ -34,7 +34,7 @@ Here is nearly functional example code (you just have to provide
 `generate_one_completion` to make it work) that saves generated completions to
 `samples.jsonl`.
 
-以下代码已在write.py里实现，没有写shell命令，需要直接改main函数的代码(｡•́︿•̀｡)，**注意加API-key**
+（以下代码已在write.py里实现，没有写shell命令，需要直接改main函数的代码(｡•́︿•̀｡)，**注意加API-key**）
 ```
 from human_eval.data import write_jsonl, read_problems
 
@@ -51,7 +51,7 @@ write_jsonl("samples.jsonl", samples)
 
 To evaluate the samples, run
 
-**我将execution.py的超时函数修改为Windows有效，Linux评估出现问题可以参考：https://github.com/openai/human-eval/issues/18**
+（**我将execution.py的超时函数修改为Windows有效，Linux评估出现问题可以参考：https://github.com/openai/human-eval/issues/18**）
 ```
 $ evaluate_functional_correctness samples.jsonl
 Reading samples...

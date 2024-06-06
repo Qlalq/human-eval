@@ -16,6 +16,7 @@ Check out and install this repository:
 ```
 $ git clone https://github.com/Qlalq/human-eval
 $ pip install -e human-eval
+$ pip install multiprocess
 ```
 
 ## Usage
